@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  width: 290px;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.form {
+  position: relative;
+}
+.chosen-value,
+.value-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  //   width: 100%;
+}
+.chosen-value {
+  width: 290px;
+  font-family: 'Ek Mukta';
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  height: 3rem;
+  font-size: 0.9rem;
+  padding: 1rem;
+  background-color: #fafcfd;
+  border: 3px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+.chosen-value::-webkit-input-placeholder {
+  color: #333;
+}
+.chosen-value:hover {
+  background-color: #a3a3a3;
+  cursor: pointer;
+}
+.chosen-value:hover::-webkit-input-placeholder {
+  color: #a2a2a2;
+}
+.chosen-value:focus,
+.chosen-value.open {
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+  outline: 0;
+  background-color: #979797;
+  color: #000;
+}
+.chosen-value:focus::-webkit-input-placeholder,
+.chosen-value.open::-webkit-input-placeholder {
+  color: #000;
+}
+.value-list {
+  width: 290px;
+  padding: 0;
+  list-style: none;
+  margin-top: 3rem;
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.3s ease-in-out;
+}
+.value-list.open {
+  max-height: 320px;
+  overflow: auto;
+}
+.value-list li {
+  position: relative;
+  height: 3rem;
+  background-color: #fafcfd;
+  padding: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  opacity: 1;
+}
+.value-list li:hover {
+  background-color: #929292;
+  color: white;
+}
+.value-list li.closed {
+  //   max-height: 0;
+  //   overflow: hidden;
+  //   padding: 0;
+  //   opacity: 0;
+}

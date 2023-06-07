@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-spacing: 0px;
+}
+
+@font-face {
+  font-family: 'Molish';
+  src: url('../asset/font/Mulish/static/Mulish-Regular.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Molish';
+  src: url('../asset/font/Mulish/static/Mulish-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: Molish !important;
+}

@@ -1,0 +1,63 @@
+.stickyTop {
+  position: sticky;
+  left: 33px;
+  z-index: 101;
+}
+tbody {
+  tr {
+    padding: 10px;
+    height: 80px;
+    content-visibility: auto;
+    contain-intrinsic-size: 60px;
+    td {
+      font-weight: 500;
+      white-space: nowrap;
+      border-bottom: 1px solid #eff2f5;
+    }
+    &:hover {
+      background-color: rgb(248, 250, 253);
+    }
+  }
+}
+.itemHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 23px;
+  justify-content: flex-start;
+  div {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    p {
+      line-height: 1.5;
+      margin: 0px;
+      color: rgb(49, 34, 34);
+      font-size: 12px;
+      font-weight: 800;
+    }
+  }
+}
+
+.coinLogo {
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+}
+
+.nameCell {
+  box-sizing: border-box;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.name {
+  box-sizing: border-box;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+}
