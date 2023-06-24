@@ -1,12 +1,13 @@
 import Table from '../../components/table';
 import { getcrypto } from '../../actions';
-import { useEffect, useRef, useMemo } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import { cryptoReducer } from '../../reducer/cryptoReducer';
 import { Select } from '../../components/select';
 import { InputText } from '../../components/TextInput';
 import { ButtonComponent } from '../../components/button';
 import { Paginate } from '../../components/paginate';
 import '../../styles/headerFilter.scss';
+import { useDay, usePopupLive } from '../../hooks';
 
 const CryptocurrencyList = () => {
   const headers = useMemo(() => {
@@ -73,25 +74,13 @@ const CryptocurrencyList = () => {
     getcrypto(dispatch, query);
   };
 
+  const { currentDay } = useDay();
+  const { daysRemaining } = usePopupLive('2023-06-25', '2023-06-28');
+
   return (
     <>
-      <div className="containerFilter">
-        <Select
-          ref={selectRef}
-          data={[
-            'price',
-            'market_cap',
-            'volume_24h',
-            'circulating_supply',
-            'percent_change_24h',
-          ]}
-        />
-        <InputText label={'min'} ref={minRef} />
-        <InputText label={'max'} ref={maxRef} />
-        <ButtonComponent name="applyFilter" hanldeClick={handleFilter} />
-      </div>
-      <Table headers={headers} rows={state} handleClick={handleSort} />;
-      <Paginate status={state.status} dispatch={dispatch} action={getcrypto} />
+      {currentDay}
+      <div className="containerFilter">{daysRemaining && <div>popup</div>}</div>
     </>
   );
 };

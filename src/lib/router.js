@@ -29,8 +29,4 @@ router.get('/info', async (req, res) => {
     .catch((err) => console.log(err));
 });
 
-// router.get('/hello', async (_req, res) => {
-//   res.status(200).json({ message: 'Hello World!' });
-// });
-
 module.exports = router;
