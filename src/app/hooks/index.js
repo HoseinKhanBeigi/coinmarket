@@ -19,21 +19,21 @@ export const useDay = () => {
 
 export const usePopupLive = (start, end) => {
   const { currentDay } = useDay();
-  const [daysRemaining, setDaysRemaining] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const calculatePopupLive = () => {
       const startDay = new Date(start).getDate();
       const endDay = new Date(end).getDate();
       if (currentDay <= endDay && currentDay >= startDay) {
-        setDaysRemaining(true);
+        setIsOpen(true);
       } else {
-        setDaysRemaining(false);
+        setIsOpen(false);
       }
     };
 
     calculatePopupLive();
   }, [currentDay]);
   return {
-    daysRemaining,
+    isOpen,
   };
 };

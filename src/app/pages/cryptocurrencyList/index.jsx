@@ -75,12 +75,12 @@ const CryptocurrencyList = () => {
   };
 
   const { currentDay } = useDay();
-  const { daysRemaining } = usePopupLive('2023-06-25', '2023-06-28');
+  const { isOpen } = usePopupLive('2023-06-25', '2023-06-28');
 
   return (
     <>
       {currentDay}
-      <div className="containerFilter">{daysRemaining && <div>popup</div>}</div>
+      <div className="containerFilter">{isOpen && <div>popup</div>}</div>
     </>
   );
 };
